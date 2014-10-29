@@ -1,7 +1,11 @@
 import BF.Parser
 import Text.ParserCombinators.Parsec
+import System.Environment
+
+parsebf :: String -> String
+parsebf a = case (parse parseFile "" a) of
+                 Left a -> ""
+                 Right b -> show b
 
 main :: IO ()
-main = case (parse parseFile "" "><+- rjgh,.[-]") of
-	Left a -> print a
-	Right b -> print b
+main = interact parsebf
