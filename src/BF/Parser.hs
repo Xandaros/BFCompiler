@@ -3,14 +3,7 @@ import Text.ParserCombinators.Parsec
 import Data.Maybe (catMaybes)
 import Control.Monad
 
-data BFInstruction = IncPtr
-                   | DecPtr
-                   | IncVal
-                   | DecVal
-                   | Output
-                   | Input
-                   | Loop [BFInstruction]
-                   deriving (Show)
+import BF.Syntax
 
 parseInst :: Parser (Maybe BFInstruction)
 parseInst = parseIncPtr <|> parseDecPtr <|> parseIncVal <|> parseDecVal <|> parseOutput <|> parseInput <|> parseLoop
