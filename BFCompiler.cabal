@@ -20,7 +20,11 @@ executable BFCompiler
   -- other-modules:       
   -- other-extensions:    
   build-depends:       base >=4.7 && <4.8,
+                       transformers,
+                       mtl,
+                       containers,
                        parsec,
-                       llvm-general
+                       llvm-general,
+                       llvm-general-pure
   hs-source-dirs:      src
   default-language:    Haskell2010
